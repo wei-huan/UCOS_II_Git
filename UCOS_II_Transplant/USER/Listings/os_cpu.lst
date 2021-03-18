@@ -1,0 +1,147 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 EXPORT           OSStartHighRdy
+    2 00000000                 EXPORT           OSCtxSw
+    3 00000000                 EXPORT           OSIntCtxSw
+    4 00000000                 EXPORT           OS_CPU_SR_Save
+    5 00000000                 EXPORT           OS_CPU_SR_Restore
+    6 00000000         
+    7 00000000 E000ED04 
+                       NVIC_INT_CTRL
+                               EQU              0xE000ED04  ;
+    8 00000000 E000ED22 
+                       NVIC_SYSPRI2
+                               EQU              0xE000ED22  ;
+    9 00000000 0000FFFF 
+                       NVIC_PENDSV_PRI
+                               EQU              0xFFFF      ;
+   10 00000000         ;
+   11 00000000 10000000 
+                       NVIC_PENDSVSET
+                               EQU              0x10000000  ;
+   12 00000000         
+   13 00000000                 PRESERVE8
+   14 00000000         
+   15 00000000                 AREA             |.text|, CODE, READONLY
+   16 00000000                 THUMB
+   17 00000000         
+   18 00000000         OS_CPU_SR_Save
+   19 00000000 BF00            NOP
+   20 00000002         
+   21 00000002         OS_CPU_SR_Restore
+   22 00000002 BF00            NOP
+   23 00000004         
+   24 00000004         OSStartHighRdy
+   25 00000004 BF00            NOP
+   26 00000006         
+   27 00000006         OSCtxSw
+   28 00000006 BF00            NOP
+   29 00000008         
+   30 00000008         OSIntCtxSw
+   31 00000008 BF00            NOP
+   32 0000000A                 end
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\os_cpu_1.d -o.\objects\os_cpu_1.o -I.\RTE\_Target_1 -
+IE:\keil5\ARM\CMSIS\5.4.0\CMSIS\Core\Include -IE:\keil5\Keil\STM32F4xx_DFP\2.13
+.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__UVISION_VERSION SET
+A 527" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\lis
+tings\os_cpu.lst ..\PORT\os_cpu.asm
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 15 in file ..\PORT\os_cpu.asm
+   Uses
+      None
+Comment: .text unused
+OSCtxSw 00000006
+
+Symbol: OSCtxSw
+   Definitions
+      At line 27 in file ..\PORT\os_cpu.asm
+   Uses
+      At line 2 in file ..\PORT\os_cpu.asm
+Comment: OSCtxSw used once
+OSIntCtxSw 00000008
+
+Symbol: OSIntCtxSw
+   Definitions
+      At line 30 in file ..\PORT\os_cpu.asm
+   Uses
+      At line 3 in file ..\PORT\os_cpu.asm
+Comment: OSIntCtxSw used once
+OSStartHighRdy 00000004
+
+Symbol: OSStartHighRdy
+   Definitions
+      At line 24 in file ..\PORT\os_cpu.asm
+   Uses
+      At line 1 in file ..\PORT\os_cpu.asm
+Comment: OSStartHighRdy used once
+OS_CPU_SR_Restore 00000002
+
+Symbol: OS_CPU_SR_Restore
+   Definitions
+      At line 21 in file ..\PORT\os_cpu.asm
+   Uses
+      At line 5 in file ..\PORT\os_cpu.asm
+Comment: OS_CPU_SR_Restore used once
+OS_CPU_SR_Save 00000000
+
+Symbol: OS_CPU_SR_Save
+   Definitions
+      At line 18 in file ..\PORT\os_cpu.asm
+   Uses
+      At line 4 in file ..\PORT\os_cpu.asm
+Comment: OS_CPU_SR_Save used once
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+NVIC_INT_CTRL E000ED04
+
+Symbol: NVIC_INT_CTRL
+   Definitions
+      At line 7 in file ..\PORT\os_cpu.asm
+   Uses
+      None
+Comment: NVIC_INT_CTRL unused
+NVIC_PENDSVSET 10000000
+
+Symbol: NVIC_PENDSVSET
+   Definitions
+      At line 11 in file ..\PORT\os_cpu.asm
+   Uses
+      None
+Comment: NVIC_PENDSVSET unused
+NVIC_PENDSV_PRI 0000FFFF
+
+Symbol: NVIC_PENDSV_PRI
+   Definitions
+      At line 9 in file ..\PORT\os_cpu.asm
+   Uses
+      None
+Comment: NVIC_PENDSV_PRI unused
+NVIC_SYSPRI2 E000ED22
+
+Symbol: NVIC_SYSPRI2
+   Definitions
+      At line 8 in file ..\PORT\os_cpu.asm
+   Uses
+      None
+Comment: NVIC_SYSPRI2 unused
+4 symbols
+344 symbols in table
